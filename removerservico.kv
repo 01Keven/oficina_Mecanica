@@ -1,0 +1,31 @@
+<RemoverServicoPopup>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Selecione os serviços a serem removidos:'
+            size_hint_y: None
+            height: '30dp'
+        ScrollView:
+            GridLayout:
+                id: servicos_layout
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+        Button:
+            text: 'Remover'
+            on_press: root.remover_servicos()
+        Button:
+            text: 'Fechar'
+            on_press: root.dismiss()
+
+<ServicoLayout>:
+    orientation: 'horizontal'
+    size_hint_y: None
+    height: '30dp'
+    CheckBox:
+        size_hint_x: None
+        width: '30dp'
+    Label:
+        text: root.nome
+    Label:
+        text: root.preco

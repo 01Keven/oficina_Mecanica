@@ -1,0 +1,19 @@
+<RemoverProdutoPopup>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Selecione os produtos a serem removidos:'
+            size_hint_y: None
+            height: '30dp'
+        ScrollView:
+            GridLayout:
+                id: produtos_layout
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+        Button:
+            text: 'Remover'
+            on_press: root.remover_produtos()  # Corrigido para chamar 'remover_produtos'
+        Button:
+            text: 'Fechar'
+            on_press: root.dismiss()

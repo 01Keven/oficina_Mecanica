@@ -1,0 +1,42 @@
+<IniciarOsPopupContent>:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        Button:
+            text: 'Encerrar OS'
+            on_press: root.encerrar_os()
+    BoxLayout:
+        id: itens_selecionados_layout
+        orientation: 'vertical'
+        ScrollView:
+            size_hint: 1, None
+            height: '200dp'
+            GridLayout:
+                id: produtos_servicos_layout
+                cols: 2
+                spacing: '10dp'
+                size_hint_y: None
+                height: self.minimum_height
+
+<IniciarOs>:
+    itens_selecionados: []
+    orientation: 'vertical'
+
+    ScrollView:
+        size_hint: 1, None
+        height: '400dp'
+        GridLayout:
+            id: produtos_servicos_layout
+            cols: 2
+            spacing: '10dp'
+            size_hint_y: None
+            height: self.minimum_height
+
+    BoxLayout:
+        size_hint_y: None
+        height: '40dp'
+        Button:
+            text: 'Fechar OS'
+            on_press: root.fechar_os_popup()
+            size_hint_x: 0.5

@@ -1,0 +1,74 @@
+# cadastroservico.kv
+
+<cadastroservico>:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint: 1, 0.2
+        canvas.before:
+            Color:
+                rgba: 0.4, 0.8, 1, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            font_size: 50
+            text: "CADASTRAR SERVIÇO"
+    BoxLayout:
+        size_hint: 1, 0.6
+        canvas.before:
+            Color:
+                rgba: 0.4, 0.8, 1, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint: 1, 0.7
+            orientation: 'horizontal'
+            padding: 10
+            Label:
+                text: 'NOME'
+            TextInput:
+                id: nome_input
+                font_size: 14  # Aumentei o tamanho do font_size
+        BoxLayout:
+            size_hint: 1, 0.7
+            orientation: 'horizontal'
+            padding: 10
+            Label:
+                canvas.before:
+                    Color:
+                        rgba:0.4, 0.8, 1, 1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                text: 'PREÇO'
+            TextInput:
+                id: preco_input
+                input_type: 'number'
+                multiline: False
+                on_text: root.formatar_preco()
+                font_size: 14 # Aumentei o tamanho do font_size
+        BoxLayout:
+            size_hint: 1, 0.7
+            orientation: 'horizontal'
+            padding: 20
+            spacing: 10
+            Button:
+                text: 'CADASTRAR SERVIÇO'
+                background_color: (1, 1, 1, 0.8)
+                on_press: root.cadastrar_servico(nome_input.text, preco_input.text)
+
+            Button:
+                text: 'VOLTAR'
+                background_color: (1, 1, 1, 0.8)
+                on_press: root.voltar()
+    BoxLayout:
+        size_hint: 1, 0.2
+        canvas.before:
+            Color:
+                rgba: 0.4, 0.8, 1, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:

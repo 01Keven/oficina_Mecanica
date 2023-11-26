@@ -1,0 +1,56 @@
+# menu.kv
+
+<Menu>:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint: 1, 0.1
+        canvas.before:
+            Color:
+                rgba: 120, 188, 215, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+    BoxLayout:
+        size_hint: 1, 0.7
+        canvas.before:
+            Color:
+                rgba: 120, 188, 215, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        padding: 20
+        spacing: 30
+        orientation: 'vertical'
+        Button:
+            text: 'CADASTRAR PRODUTO'
+            background_color: (0.4, 0.65, 0.9, 1)
+            on_press: root.cadastrar_produto_popup()
+        Button:
+            text: 'REMOVER PRODUTO'
+            background_color: (0.4, 0.65, 0.9, 1)
+            on_press: root.remover_produto_popup()
+        Button:
+            text: 'CADASTRAR SERVIÇO'
+            background_color: (0.4, 0.65, 0.9, 1)
+            on_press: root.cadastrar_servico_popup()
+        Button:
+            text: 'REMOVER SERVIÇO'
+            background_color: (0.4, 0.65, 0.9, 1)
+            on_press: root.remover_servico_popup()
+        Button:
+            text: "Iniciar OS"
+            on_press: root.iniciar_os_popup()
+        Button:
+            text: 'SAIR'
+            background_color: (1, 0, 0, 1)
+            on_press: root.sair()
+    BoxLayout:
+        size_hint: 1, 0.1
+        canvas.before:
+            Color:
+                rgba: 120, 188, 215, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
